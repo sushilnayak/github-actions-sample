@@ -1,14 +1,11 @@
-name: codeql-analysis
+name: "CodeQL"
 
 on:
   push:
-    branches:
-      - master
-      - feature
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - master
-      - feature
+    # The branches below must be a subset of the branches above
+    branches: [ "master" ]
   schedule:
     - cron: '0 0 * * *'
 
@@ -32,6 +29,7 @@ jobs:
 
       - name: Initialize CodeQL
         uses: github/codeql-action/init@v2
-
+      - name: Autobuild
+        uses: github/codeql-action/autobuild@v2
       - name: Perform CodeQL Analysis
         uses: github/codeql-action/analyze@v2
