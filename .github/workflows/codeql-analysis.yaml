@@ -1,14 +1,11 @@
-name: codeql-analysis
+name: "CodeQL"
 
 on:
   push:
-    branches:
-      - master
-      - feature
+    branches: [ "master" ]
   pull_request:
-    branches:
-      - master
-      - feature
+    # The branches below must be a subset of the branches above
+    branches: [ "master" ]
   schedule:
     - cron: '0 0 * * *'
 
