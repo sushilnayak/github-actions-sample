@@ -1,0 +1,19 @@
+on:
+  workflow_dispatch:
+    inputs:
+      collection_name:
+        description: 'Name of the collection'
+        required: true
+        type: string
+      document_ids:
+        description: 'comma delimited document id(s)'
+        required: true
+        type: string
+jobs:
+  print-tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print the input tag to STDOUT
+      - run: |
+          echo "Collection : ${{ github.event.inputs.collection_name }}"
+          echo "Document IDS: ${{ github.event.inputs.document_ids }}"
