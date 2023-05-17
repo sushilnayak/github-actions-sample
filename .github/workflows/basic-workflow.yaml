@@ -1,0 +1,16 @@
+name: basic-workflow
+
+on: [push]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+      - name: Run one line script
+        run: echo Sushil Nayak
+      - name: Run multi-line script
+        run: |
+          echo add other actions to build
+          echo test, and deploy your project
