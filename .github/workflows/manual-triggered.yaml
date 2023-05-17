@@ -1,3 +1,5 @@
+name: "Manual Triggered"
+
 on:
   workflow_dispatch:
     inputs:
@@ -14,6 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Print the input tag to STDOUT
-      - run: |
+        run: |
           echo "Collection : ${{ github.event.inputs.collection_name }}"
           echo "Document IDS: ${{ github.event.inputs.document_ids }}"
